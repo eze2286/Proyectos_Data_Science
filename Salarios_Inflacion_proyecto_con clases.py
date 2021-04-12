@@ -419,8 +419,8 @@ inflacion_vs_salarios = Inflacion_historica[["Fecha", "Nivel general", "Indice_N
 
 #######################################################OUTPUTS_POSIBLES#########################################################################
 
-#print(funciones.grafico_historico())
-print(funciones.grafbarras_ult_36_meses())
+#print(funciones.grafico_historico()) 
+#print(funciones.grafbarras_ult_36_meses())
 #print(funciones.scatter_plot_inflacion())
 #print(funciones.whiskers_plot())
 #print(funciones.regresion_lineal())
