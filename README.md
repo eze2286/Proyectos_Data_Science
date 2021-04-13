@@ -1,6 +1,6 @@
-# Proyectos_Data_Science :tw-1f320:
+# Proyectos_Data_Science :zap::four_leaf_clover:
 
-## Proyecto evolución de Inflacion y Salarios (base INDEC):tw-1f30e:
+## Proyecto evolución de Inflacion y Salarios (base INDEC):money_with_wings:
 
 El proyecto busca poder obtener mediante el lenguaje de Python la evolucion historica de la inflacion y tambien la evolucion historica de los salarios, para de esta forma poder combinar estas 2 informaciones y hacer una comparativa. Estos datos se muestran tanto de forma numerica como gráfica, para los años y meses que se encuentran disponible en la pagina web del INDEC (desde año 2016 hasta la fecha) .
 
@@ -8,7 +8,7 @@ En total consta de 10 outputs(funciones) posibles. Algunas de ellas son gráfico
 
 Dentro del codigo se realazan comentarios explicando lo que se hace en cada paso.
 
-*Los outputs posibles son:*
+*Los outputs posibles son:*:punch:
 
 *- funciones.grafico_historico(): muestra graficamente la evolución de los salarios y la inflacion, y tambien la compraracion historica de salarios e inflacion respecto a su media aritmetica.*
 
