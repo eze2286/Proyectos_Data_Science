@@ -175,10 +175,19 @@ class funciones():
         d = inflacion_vs_salarios[inflacion_vs_salarios["Fecha"]==pd.to_datetime(fecha_actual)]["Indice"].sum()
         inflacion = round((b/a-1)*100,2)
         salarios =  round((d/c-1)*100,2)
+        poder_adquisitvo =  round((1-((1+salarios/100)/(1+inflacion/100)))*100,2)
         frase = "La inflacion durante el periodo" + "(" + fecha_actual + " - " + fecha_pasada +")" \
         + " fue: " + "% " + str(inflacion) + "\nLa variacion salarial durante el periodo" + "(" + \
         fecha_actual + " - " + fecha_pasada +")" + " fue: " + "% " + str(salarios)
-        return frase
+        frase2 = ""
+        if inflacion > salarios:
+            frase2 = f"\nLa pérdida de poder adquisitvo del salario durante el periodo ({fecha_actual} - {fecha_pasada})"\
+            f" fue de % {poder_adquisitvo}"
+        else:
+            frase2 = f"\nLa ganancia de poder adquisitvo del salario durante el periodo ({fecha_actual} - {fecha_pasada})"\
+            f" fue de % {poder_adquisitvo}"
+        
+        return frase + frase2  
 
 #E -->  esta funcion me calcula la inflacion de un año-mes puntual seleccionado
 
@@ -425,7 +434,7 @@ inflacion_vs_salarios = Inflacion_historica[["Fecha", "Nivel general", "Indice_N
 #print(funciones.whiskers_plot())
 #print(funciones.regresion_lineal())
 #print(funciones.inflacion_salarios_anual_filter())
-#print(funciones.calculo_IPC_Salarios())
+print(funciones.calculo_IPC_Salarios())
 #print(funciones.inflacion_puntual())
 #print(funciones.calculo_inflacion_periodica())
 #print(funciones.forescast())
