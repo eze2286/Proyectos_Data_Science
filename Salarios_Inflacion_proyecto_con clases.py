@@ -434,7 +434,7 @@ inflacion_vs_salarios = Inflacion_historica[["Fecha", "Nivel general", "Indice_N
 #print(funciones.whiskers_plot())
 #print(funciones.regresion_lineal())
 #print(funciones.inflacion_salarios_anual_filter())
-print(funciones.calculo_IPC_Salarios())
+#print(funciones.calculo_IPC_Salarios())
 #print(funciones.inflacion_puntual())
 #print(funciones.calculo_inflacion_periodica())
 #print(funciones.forescast())
