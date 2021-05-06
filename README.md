@@ -23,7 +23,7 @@ Dentro del codigo se realazan comentarios explicando lo que se hace en cada paso
 
 *- **funciones.inflacion_salarios_anual_filter()**: se solicita al usuario que se intruzca un mes y en base al mismo se realiza una grafica interanual comparativa de inflacion y salarios. Asi mismo se muestra la informacion en un DataFrame tanto a nivel del mes seleccionado como de forma interanual.*
 
-*- **funciones.calculo_IPC_Salarios()**: se pide al usuario que introduzca AÑO-MES en formato formato: YYYY-MM, tanto fecha desde como fecha hasta. Y en base a las fechas introducidas se informa la inflacion y la variacion salarial durante el periodo seleccionado.*
+*- **funciones.calculo_IPC_Salarios()**: se pide al usuario que introduzca AÑO-MES en formato formato: YYYY-MM, tanto fecha desde como fecha hasta. Y en base a las fechas introducidas se informa la inflacion y la variacion salarial durante el periodo seleccionado. Además se muestra la ganancia o pérdida de poder adquisitivo del salario en dicho período.*
 
 *- **funciones.inflacion_puntual()**: se pide al usuario que introduzca AÑO-MES en formato formato: YYYY-MM y se informa como salida la inflacion de ese periodo seleccionado.
 *
