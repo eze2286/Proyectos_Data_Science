@@ -252,7 +252,7 @@ class funciones():
         jh_forecast = jh_model.predict(jh_forecast)
         #plt.figure(figsize=(18, 6))
         jh_model.plot(jh_forecast, xlabel = 'Fecha', ylabel = 'Inflacion', figsize=(18, 8))
-        plt.title('Prevision de Inflacion para '+ str(periodo)+" meses")
+        plt.title('Prevision de Inflacion para '+ str(periodo)+" meses",x=0.5, y=0.99)
         plt.show()
 
 ####################################################### INFLACION ##############################################################################
