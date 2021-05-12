@@ -10,7 +10,7 @@ pd.options.display.max_columns = 8
 
 
 
-consulta_acciones = ["ADA-USD"]
+consulta_acciones = ["BTC-USD", "ETH-USD", "MATIC-USD"]
 
 def acciones_urls():
     lista_urls = []
@@ -157,6 +157,7 @@ def eleccion ():
         print(rendimientos())
     else:
         print("eleccion incorrecta")
+        
 print(eleccion ())        
 #print(rendimientos())
 #print(concatenado_acciones())

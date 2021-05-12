@@ -10,7 +10,7 @@ class funciones():
         eje_x = IPC_vs_PF_final.reset_index()[["Año", "Mes"]]
         eje_x["Año-Mes"] = eje_x["Año"].map(str) + "-" + eje_x["Mes"].map(str)
         grafico = IPC_vs_PF_final.reset_index()[["Año"]]
-        plt.figure(figsize=(18, 11) , facecolor="#CEF6E3")
+        plt.figure(figsize=(18,7) , facecolor="#CEF6E3")
         plt.style.use('seaborn-darkgrid')
         plt.plot(eje_x["Año-Mes"], IPC_vs_PF_final["IPC_mensual"], label = "IPC_mensual", marker= "o", markersize=5, linewidth=2)
         plt.plot(eje_x["Año-Mes"], IPC_vs_PF_final["Tasa_Plazo_Fijo"], label = "Plazo_Fijo_mensual",ls='--', marker= "*", c="red")        
@@ -65,10 +65,18 @@ class funciones():
             d = df_IPC_PF[df_IPC_PF["Fecha"]==pd.to_datetime(fecha_actual)]["Indice_Plazo_Fijo"].sum()
             inflacion = round((b/a-1)*100,2)
             plazo_fijo =  round((d/c-1)*100,2)
+            poder_adquisitvo =  round((1-((1+plazo_fijo/100)/(1+inflacion/100)))*100,2)
             frase = "La inflacion durante el periodo" + "(" + fecha_actual + " - " + fecha_pasada +")" \
             + " fue: " + "% " + str(inflacion) + "\nLa variacion de la tasa de plazo fijo a 30 dias durante el periodo" + "(" + \
             fecha_actual + " - " + fecha_pasada +")" + " fue: " + "% " + str(plazo_fijo)
-            return frase
+            frase2 = ""
+            if inflacion > plazo_fijo:
+                frase2 = f"\nLa pérdida del plazo fijo frente a la inflacion durante el periodo ({fecha_actual} - {fecha_pasada})"\
+                f" fue de % {poder_adquisitvo}"
+            else:
+                frase2 = f"\nLa ganancias del plazo fijo frente a la inflacion durante el periodo ({fecha_actual} - {fecha_pasada})"\
+                f" fue de % {poder_adquisitvo}"
+            return frase + frase2
 
 
 # 1) Armado del DataFrame del historico de Plazo Fijo desde 01-2017 hasta la fecha.
@@ -193,4 +201,4 @@ IPC_vs_PF_final["Indice_Plazo_Fijo"] = (IPC_vs_PF_final["Tasa_Plazo_Fijo"]/100 +
 
 #print(funciones.inflacion_plazofijo_anual_filter())
 #print(funciones.grafico_historico())
-#print(funciones.calculo_IPC_PF())
+print(funciones.calculo_IPC_PF())
