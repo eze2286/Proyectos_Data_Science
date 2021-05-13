@@ -199,5 +199,5 @@ IPC_vs_PF_final["Indice_Plazo_Fijo"] = (IPC_vs_PF_final["Tasa_Plazo_Fijo"]/100 +
 
 
 #print(funciones.inflacion_plazofijo_anual_filter())
-print(funciones.grafico_historico())
+#print(funciones.grafico_historico())
 #print(funciones.calculo_IPC_PF())
