@@ -175,7 +175,7 @@ class funciones():
         d = inflacion_vs_salarios[inflacion_vs_salarios["Fecha"]==pd.to_datetime(fecha_actual)]["Indice"].sum()
         inflacion = round((b/a-1)*100,2)
         salarios =  round((d/c-1)*100,2)
-        poder_adquisitvo =  round((1-((1+salarios/100)/(1+inflacion/100)))*100,2)
+        poder_adquisitvo =  abs(round((1-((1+salarios/100)/(1+inflacion/100)))*100,2))
         frase = "La inflacion durante el periodo" + "(" + fecha_actual + " - " + fecha_pasada +")" \
         + " fue: " + "% " + str(inflacion) + "\nLa variacion salarial durante el periodo" + "(" + \
         fecha_actual + " - " + fecha_pasada +")" + " fue: " + "% " + str(salarios)
