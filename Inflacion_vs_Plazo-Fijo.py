@@ -8,8 +8,7 @@ pd.options.display.float_format = '{:.1f}'.format
 class funciones():
     def grafico_historico():
         eje_x = IPC_vs_PF_final.reset_index()[["Año", "Mes"]]
-        eje_x["Año-Mes"] = eje_x["Año"].map(str) + "-" + eje_x["Mes"].map(str)
-        grafico = IPC_vs_PF_final.reset_index()[["Año"]]
+        eje_x["Año-Mes"] = eje_x["Año"].map(str) + "-" + eje_x["Mes"].map(str)        
         plt.figure(figsize=(18,7) , facecolor="#CEF6E3")
         plt.style.use('seaborn-darkgrid')
         plt.plot(eje_x["Año-Mes"], IPC_vs_PF_final["IPC_mensual"], label = "IPC_mensual", marker= "o", markersize=5, linewidth=2)
@@ -200,5 +199,5 @@ IPC_vs_PF_final["Indice_Plazo_Fijo"] = (IPC_vs_PF_final["Tasa_Plazo_Fijo"]/100 +
 
 
 #print(funciones.inflacion_plazofijo_anual_filter())
-#print(funciones.grafico_historico())
+print(funciones.grafico_historico())
 #print(funciones.calculo_IPC_PF())
