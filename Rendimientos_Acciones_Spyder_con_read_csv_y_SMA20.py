@@ -15,7 +15,9 @@ consulta_acciones = ["BTC-USD", "ETH-USD", "ADA-USD"]
 def acciones_urls():
     lista_urls = []
     for accion in consulta_acciones:
-        accion = "https://query1.finance.yahoo.com/v7/finance/download/"+accion+"?period1=1451606400&period2=1796915743&interval=1d&events=history&includeAdjustedClose=true/"+accion+".csv"
+        #accion = "https://query1.finance.yahoo.com/v7/finance/download/"+accion+"?period1=1451606400&period2=1796915743&interval=1d&events=history&includeAdjustedClose=true/"+accion+".csv"
+        accion = "https://query1.finance.yahoo.com/v7/finance/download/"+accion+"?period1=1451606400&period2=1796915743&interval=1d&events=history&includeAdjustedClose=true"
+
         lista_urls.append(accion)
     
     return(lista_urls)
