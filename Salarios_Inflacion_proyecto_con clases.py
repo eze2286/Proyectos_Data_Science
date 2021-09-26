@@ -297,12 +297,13 @@ except:
 # 4  Elimino NaN
 
 df_indec_indices = df_indec_indices.dropna()
-df_indec = df_indec.dropna()
+df_indec = df_indec.dropna(axis=1, how = 'all')
 
 # 5  Estructuro el DataFrame
 
 ipc_nacional = df_indec.iloc[:18]
 ipc_nacional_indices = df_indec_indices.iloc[:18]
+#ipc_nacional = ipc_nacional.drop(["Unnamed: 57", "Unnamed: 58"], axis=1)
 lista = {3:"Nivel general", 4:"Alimentos y bebidas no alcohólicas", 5: "Bebidas alcohólicas y tabaco", \
     6: "Prendas de vestir y calzado", 7: "Vivienda. agua. electricidad y otros combustibles", 8:"Equipamiento y mantenimiento del hogar", \
     9:"Salud", 10:"Transporte", 11:"Comunicación", 12:"Recreación y cultura", 13:"Educación", 14:"Restaurantes y hoteles",\
@@ -321,6 +322,7 @@ ipc_T_indices = ipc_T_indices.reset_index()
 ipc_T = ipc_T.convert_dtypes()
 ipc_T_indices = ipc_T_indices.convert_dtypes()
 ipc_T = ipc_T.rename(columns={"index":"Fecha"})
+#ipc_T["Fecha"] = pd.to_datetime(ipc_T["Fecha"])
 ipc_T_indices = ipc_T_indices.rename(columns={"index":"Fecha"})
 
 # 7  Consulto info de columnas
@@ -329,7 +331,7 @@ ipc_T_indices = ipc_T_indices.rename(columns={"index":"Fecha"})
 #ipc_T_indices.info()
 
 # 8  Armo un Sub_dataset para luego hacer merge
-
+ipc_T = ipc_T[["Fecha", "Nivel general"]]
 nivel_general_indices = ipc_T_indices[["Fecha","Nivel general"]]
 
 # 8.1  Cambio nombre del sub_dataset para que no se repita con el del otro dataframe
@@ -345,7 +347,7 @@ Inflacion_historica = ipc_T.merge(nivel_general_indices, how="inner", on="Fecha"
 
 # 10  Guardo excel en carpeta
 
-#Inflacion_historica.to_excel(r'D:\Desktop\Todas mis cosas\Cursos\EXCEL\Data Science-Basico\Inflacion automatizada\IPC_Final.xlsx')
+Inflacion_historica.to_excel(r'D:\Desktop\Todas mis cosas\Cursos\EXCEL\Data Science-Basico\Inflacion automatizada\IPC_Final.xlsx')
 
 # 11  Modifico el dataset para filtrarlo por mes de forma interanual 
 
@@ -438,3 +440,5 @@ inflacion_vs_salarios = Inflacion_historica[["Fecha", "Nivel general", "Indice_N
 #print(funciones.inflacion_puntual())
 #print(funciones.calculo_inflacion_periodica())
 #print(funciones.forescast())
+
+
