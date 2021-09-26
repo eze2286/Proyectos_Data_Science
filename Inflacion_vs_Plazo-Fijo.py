@@ -135,7 +135,8 @@ except:
 #   Elimino NaN
 
 df_indec_indices = df_indec_indices.dropna()
-df_indec = df_indec.dropna()
+df_indec = df_indec.dropna(axis=1, how = 'all')
+
 
 #   Estructuro el DataFrame
 
