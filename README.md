@@ -1,5 +1,5 @@
 # Proyectos_Data_Science :zap::four_leaf_clover:
-En este repositorio muestro los proyectos de Data_Science relacionados con diferentes variables economicas y sus vinculos. Ejemplo inflacion y salarios, plazos fijos. Y tambien incluye proyecto relacionado con el mercado financiero y la comparacion emtre los diferentes activos.
+En este repositorio muestro los proyectos de Data_Science relacionados con diferentes variables economicas y sus vinculos. Ejemplo inflacion y salarios, plazos fijos. Y tambien incluye proyecto relacionado con el mercado financiero y la comparacion entre los diferentes activos.
 
 # **PROYECTO 1**:mag_right:
 ## Proyecto evolución de Inflacion y Salarios (base INDEC):money_with_wings:
