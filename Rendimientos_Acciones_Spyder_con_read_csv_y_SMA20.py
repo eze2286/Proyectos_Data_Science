@@ -10,7 +10,7 @@ pd.options.display.max_columns = 8
 
 
 
-consulta_acciones = ["BTC-USD", "ETH-USD", "ADA-USD"]
+consulta_acciones = ["BTC-USD", "ETH-USD", "VET-USD"]
 
 def acciones_urls():
     lista_urls = []
