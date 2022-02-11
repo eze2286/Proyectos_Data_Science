@@ -400,7 +400,7 @@ except:
 salarios["Año"] = salarios.Año.fillna(method="ffill")
 
 salarios = salarios.dropna()
-salarios["Año"] = salarios.Año.str.replace("*","").fillna("2015")
+salarios["Año"] = salarios.Año.astype(str).str.replace("*","").fillna("2015")
 salarios = salarios.iloc[12:]
 
 Meses_nombre = ["Enero ", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
